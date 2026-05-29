@@ -9,10 +9,30 @@
 </head>
 
 <body>
-    <th:block th:replace="~{fragments :: navbar()}"></th:block>
+    <th:block th:replace="~{fragments :: navbar('','')}"></th:block>
     <div class="container">
-        <h1 th:text="|${type} ${id}|" />
-        <h2 th:text="${selected}" />
+        <div class="col-12 justify-center align-center">
+            <div class="row justify-center align-center" th:object="${selected}">
+                <div class="col-4 text-center">
+                    <div class="card">
+                        <img th:src="*{image}" class="card-img-top" th:alt="*{titolo}">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="*{titolo}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 text-center">
+                    <div class="card-body h-100">
+                        <h5 class="card-title" th:text="|dettagli per: *{titolo}|" />
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, aut nihil? Ab consequuntur
+                            ad corrupti, quidem perferendis quas ut culpa eligendi esse nihil quia quisquam labore
+                            neque, earum natus impedit!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <th:block th:replace="~{fragments :: bootstrapJs()}"></th:block>
