@@ -4,12 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <th:block th:replace="~{fragments :: bootstrapCss()}"></th:block>
     <title>Songs</title>
 </head>
 
 <body>
-    <h1>Questa è la lista delle migliori canzoni!</h1>
-    <p th:text="|le migliori canzoni sono: ${titles}" />
+    <th:block th:replace="~{fragments :: navbar('active', '' )}"></th:block>
+    <div class="container">
+        <h1>Questa è la lista delle migliori canzoni!</h1>
+        <p th:text="|le migliori canzoni sono: ${titles}" />
+    </div>
+
+    <th:block th:replace="~{fragments :: bootstrapJs()}"></th:block>
 </body>
 
 </html>

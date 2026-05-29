@@ -4,12 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <th:block th:replace="~{fragments :: bootstrapCss()}"></th:block>
     <title th:text="${type}" />
 </head>
 
 <body>
-    <h1 th:text="|${type} ${id}|" />
-    <h2 th:text="${selected}" />
+    <th:block th:replace="~{fragments :: navbar()}"></th:block>
+    <div class="container">
+        <h1 th:text="|${type} ${id}|" />
+        <h2 th:text="${selected}" />
+    </div>
+
+    <th:block th:replace="~{fragments :: bootstrapJs()}"></th:block>
 </body>
 
 </html>

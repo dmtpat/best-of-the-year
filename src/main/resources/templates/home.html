@@ -4,15 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <th:block th:replace="~{fragments :: bootstrapCss()}"></th:block>
     <title>home</title>
 </head>
 
 <body>
-    <h1>Hello World</h1>
-    <hr>
-    <p>Questa è la pagina della rotta base</p>
-    <br>
-    <p th:text="|Best of the year by ${io}!|" />
+    <th:block th:replace="~{fragments :: navbar('','')}"></th:block>
+    <div class="container text-center">
+        <h1 th:text="|Best of the year by ${io}!|" />
+        <hr>
+        <img th:src="@{/duckpat.png}" class="img-fluid" style="max-width: 200px;" alt="Duckpat logo">
+        <br>
+        <p>Questa è la pagina della rotta base</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur cum eum cupiditate reprehenderit
+            facilis esse quos minus natus veniam, voluptates aperiam id eligendi laudantium itaque molestias, a
+            doloribus odit!</p>
+    </div>
+
+    <th:block th:replace="~{fragments :: bootstrapJs()}"></th:block>
 </body>
 
 </html>
