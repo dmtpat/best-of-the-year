@@ -6,9 +6,7 @@ public class Song implements Serializable{
     private int id;
     private String titolo;
 
-    public Song() {
-
-    }
+    public Song() {}
 
     public Song(int id, String titolo) {
         this.id = id;
@@ -18,7 +16,21 @@ public class Song implements Serializable{
     public int getId() {
         return id;
     }
+
     public String getTitolo() {
         return titolo;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
+    
+    @Override
+    public String toString() {
+        return this.titolo;
     }
 }

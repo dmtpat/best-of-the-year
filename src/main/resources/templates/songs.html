@@ -10,9 +10,20 @@
 
 <body>
     <th:block th:replace="~{fragments :: navbar('active', '' )}"></th:block>
-    <div class="container">
+    <div class="container text-center">
         <h1>Questa è la lista delle migliori canzoni!</h1>
-        <p th:text="|le migliori canzoni sono: ${titles}" />
+        <p th:text="|le migliori canzoni sono:|" />
+        <div class="col-12 justify-center align-center">
+            <div class="row">
+                <div class="col-4 text-center" th:each=" Song : ${songsList}">
+                    <div class="card" th:object="${Song}">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="*{titolo}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <th:block th:replace="~{fragments :: bootstrapJs()}"></th:block>

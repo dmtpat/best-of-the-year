@@ -42,33 +42,34 @@ public class homeController {
 
     @GetMapping("/movies")
     public String getMovies(Model model) {
-        String titles = new String("");
+        // String titles = new String("");
         List<Movie> moviesList = getBestMovies();
-        for (Movie movie : moviesList) {
-            if (titles.equals("")) {
-                titles += movie.getTitolo();
-            } else {
+        // for (Movie movie : moviesList) {
+        //     if (titles.equals("")) {
+        //         titles += movie.getTitolo();
+        //     } else {
 
-                titles += ", " + movie.getTitolo();
-            }
-        }
-        model.addAttribute("titles", titles);
-        
+        //         titles += ", " + movie.getTitolo();
+        //     }
+        // }
+        // model.addAttribute("titles", titles);
+        model.addAttribute("moviesList", moviesList);
         return "movies";
     }
     @GetMapping("/songs")
     public String getSongs(Model model) {
-        String titles = new String("");
+        // String titles = new String("");
         List<Song> songsList = getBestSongs();
-        for (Song song : songsList) {
-            if (titles.equals("")) {
-                titles += song.getTitolo();
-            } else {
+        // for (Song song : songsList) {
+        //     if (titles.equals("")) {
+        //         titles += song.getTitolo();
+        //     } else {
 
-                titles += ", " + song.getTitolo();
-            }
-        }
-        model.addAttribute("titles", titles);
+        //         titles += ", " + song.getTitolo();
+        //     }
+        // }
+        // model.addAttribute("titles", titles);
+        model.addAttribute("songsList", songsList);
         return "songs";
     }
 
